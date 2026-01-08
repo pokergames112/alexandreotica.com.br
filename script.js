@@ -111,25 +111,28 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    // --- 2. CARROSSEL DE MARCAS (GIRANDO SEM PARAR - CORRIGIDO) ---
+    // --- 2. CARROSSEL DE MARCAS (ESTEIRA INFINITA - 4 LOGOS NO DESKTOP) ---
     new Swiper(".mySwiperMarcas", {
         loop: true,
-        speed: 5000, 
+        speed: 6000, 
         autoplay: {
             delay: 0,
             disableOnInteraction: false,
-            pauseOnMouseEnter: false, // IMPORTANTE: Não para ao passar o mouse
+            pauseOnMouseEnter: false, 
         },
-        freeMode: {
-            enabled: true,
-            momentum: false,
-        },
-        slidesPerView: 2,
-        spaceBetween: 40,
-        allowTouchMove: true,
+        allowTouchMove: false, 
+        freeMode: true,
+        slidesPerView: 2, // Mobile mostra 2
+        spaceBetween: 30,
         breakpoints: {
-            768: { slidesPerView: 4 },
-            1024: { slidesPerView: 6 },
+            768: { 
+                slidesPerView: 3, 
+                spaceBetween: 40 
+            },
+            1024: { 
+                slidesPerView: 4, // Desktop fixo em 4 conforme solicitado
+                spaceBetween: 50 
+            },
         },
     });
 
@@ -183,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === modalContainer) closeModal();
     });
 
-    // --- RASTREAMENTO DE CONVERSÃO (WHATSAPP) ---
+    // --- RASTREAMENTO DE CONVERSÃO ---
     const whatsappButtons = document.querySelectorAll('a[href*="whatsapp"]');
     whatsappButtons.forEach(btn => {
         btn.addEventListener('click', () => {
