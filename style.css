@@ -190,7 +190,7 @@ nav {
 /* --- SEÇÃO HERO --- */
 .hero-section {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 40%, transparent 100%), 
-                url('img/Pessoa\ com\ oculos\ 2\ Sem\ fundo.png') no-repeat right center/contain;
+                url('img/Pessoa-com-oculos-2-Sem-fundo.webp') no-repeat right center/contain;
     background-color: #ffffff; 
     height: 100vh;
     display: flex;
@@ -497,11 +497,12 @@ nav {
     /* Garante que ocupem 50% cada, alinhados no centro */
     flex-basis: 50%; 
     text-align: center;
+    
 }
 
 .footer-item h4 {
     font-family: var(--bebas);
-    font-size: 1.5rem;
+    font-size: 3rem;
     color: var(--roxo-principal);
     margin-bottom: 15px;
 }
@@ -514,26 +515,27 @@ nav {
 
 /* Estilo para links de contato (WhatsApp e Insta) */
 .social-link {
-    /* Centraliza os links no container de contato */
     display: inline-flex;
     align-items: center;
-    color: var(--branco-texto);
+    color: #fff;
     text-decoration: none;
-    font-size: 1rem;
-    margin: 5px 15px;
+    font-size: 1.2rem; /* Aumentei um pouco o texto para acompanhar o ícone grande */
+    margin: 5px 0;    /* Espaçamento vertical entre os links */
     transition: color 0.3s;
+    width: fit-content; /* Garante que o link ocupe apenas o espaço necessário */
 }
 
 /* Ícones mantidos (se você os tiver adicionado) */
 .social-link .icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    
+    width: 80px;  /* Ajustei para 80px para não ficar desproporcional ao texto, mas você pode voltar para 100px */
+    height: 80px; 
+    margin-right: -22px; /* MARGEM NEGATIVA: Isso puxa o texto para "dentro" do espaço do ícone */
+    object-fit: contain;
 }
 
 .social-link:hover {
     color: var(--roxo-principal);
+    transform: scale(1.02); /* Dá um leve destaque ao passar o mouse */
 }
 
 
@@ -571,7 +573,7 @@ nav {
 }
 
 #scrollToTopBtn:hover {
-    background-color: #a305d1; /* Roxo um pouco mais escuro */
+    background-color: #ffffff; /* Roxo um pouco mais escuro */
 }
 
 /* --- ESTILO DO BOTÃO LEIA MAIS --- */
